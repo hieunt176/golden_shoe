@@ -7,8 +7,7 @@ export const useStyles = makeStyles({
     marginBottom: 80,
   },
 
-  item_img: (props) => ({
-    background: props.color,
+  item_img: {
     borderRadius: "30px",
     height: "380px",
     display: "flex",
@@ -22,7 +21,7 @@ export const useStyles = makeStyles({
       transform: "rotate(-24deg)",
       marginLeft: "-16px",
     },
-  }),
+  },
 
   item_name: {
     fontSize: "20px",

@@ -8,8 +8,7 @@ export const useStyles = makeStyles({
     fontFamily: "Rubik,sans-serif",
   },
 
-  item_left: (props) => ({
-    backgroundColor: props.color,
+  item_left: {
     width: "90px",
     height: "90px",
     borderRadius: "100%",
@@ -20,7 +19,7 @@ export const useStyles = makeStyles({
       transform: "rotate(-28deg) translateY(-40px)",
       filter: "drop-shadow(0 30px 20px rgba(0,0,0,.2))",
     },
-  }),
+  },
 
   item_right: {
     flex: 1,

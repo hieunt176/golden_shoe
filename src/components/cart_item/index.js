@@ -1,5 +1,7 @@
 import React from "react";
 
+import Box from "@mui/material/Box";
+
 import { connect } from "react-redux";
 import { deleteProduct, increase, reduce } from "../../actions";
 
@@ -10,14 +12,18 @@ const CartItem = (props) => {
   const product = props.shoe;
   const objIndex = props.cart.findIndex((obj) => obj.id === product.id);
 
-  const classes = useStyles({ color });
-  console.log("props.c", props);
+  const classes = useStyles();
 
   return (
     <div className={classes.item}>
-      <div className={classes.item_left}>
+      <Box
+        className={classes.item_left}
+        sx={{
+          backgroundColor: color,
+        }}
+      >
         <img src={image} alt={name} />
-      </div>
+      </Box>
       <div className={classes.item_right}>
         <div className={classes.item_name}>{name}</div>
         <div className={classes.item_price}>{"$" + price}</div>

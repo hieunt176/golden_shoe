@@ -1,5 +1,7 @@
 import React from "react";
 
+import Box from "@mui/material/Box";
+
 import { connect } from "react-redux";
 import { buyProduct } from "../../actions";
 
@@ -11,7 +13,7 @@ const ShopItem = (props) => {
 
   const productInCart = props.cart.find((p) => p.id === product_current.id);
 
-  const classes = useStyles({ color });
+  const classes = useStyles();
 
   const handleClick = () => {
     props.buyProduct(product_current);
@@ -19,9 +21,14 @@ const ShopItem = (props) => {
 
   return (
     <div className={classes.item}>
-      <div className={classes.item_img}>
+      <Box
+        className={classes.item_img}
+        sx={{
+          backgroundColor: color,
+        }}
+      >
         <img src={image} alt={name} />
-      </div>
+      </Box>
       <div className={classes.item_name}>{name}</div>
       <div className={classes.item_description}>{description}</div>
       <div className={classes.item_bottom}>
